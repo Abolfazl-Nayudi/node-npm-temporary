@@ -1,7 +1,6 @@
 {
-  "name": "7-q-cowsay",
+  "name": "express-2-class",
   "version": "1.0.0",
-  "description": "Visit the package below",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +8,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "cowsay": "^1.6.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
   }
 }
