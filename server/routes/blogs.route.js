@@ -4,6 +4,7 @@ const {
   getSingleBlog,
   createBlog,
   updateBlog,
+  deleteSingleBlog,
 } = require("../controllers/blogs.controller");
 const router = express.Router();
 
@@ -42,5 +43,7 @@ router.get("/:id", getSingleBlog);
 router.post("/", createBlog);
 
 router.patch("/:id", updateBlog);
+
+router.delete("/:id", deleteSingleBlog);
 
 module.exports = router;

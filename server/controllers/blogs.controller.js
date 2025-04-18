@@ -84,4 +84,26 @@ const updateBlog = (req, res) => {
   res.send("updated");
 };
 
-module.exports = { getAllBlogs, getSingleBlog, createBlog, updateBlog };
+const deleteSingleBlog = (req, res) => {
+  const { id } = req.params;
+
+  const newBlogsData = blogsData.filter((blog) => {
+    if (blog.id === Number(id)) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+
+  blogsData = newBlogsData;
+
+  res.status(204).json({ message: "blog deleted successfully" });
+};
+
+module.exports = {
+  getAllBlogs,
+  getSingleBlog,
+  createBlog,
+  updateBlog,
+  deleteSingleBlog,
+};
