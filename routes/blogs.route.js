@@ -3,6 +3,7 @@ const {
   getAllBlogs,
   getSingleBlog,
   createBlog,
+  updateBlog,
 } = require("../controllers/blogs.controller");
 const router = express.Router();
 
@@ -39,5 +40,7 @@ router.get("/", getAllBlogs);
 router.get("/:id", getSingleBlog);
 
 router.post("/", createBlog);
+
+router.patch("/:id", updateBlog);
 
 module.exports = router;

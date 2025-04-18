@@ -1,4 +1,4 @@
-const blogsData = [
+let blogsData = [
   {
     id: 1,
     title: "Blog 1",
@@ -62,4 +62,26 @@ const createBlog = (req, res) => {
   res.status(201).json(newBlog);
 };
 
-module.exports = { getAllBlogs, getSingleBlog, createBlog };
+const updateBlog = (req, res) => {
+  const { id } = req.params;
+
+  console.log("id", id);
+  console.log("body", req.body);
+
+  const updatedBlogs = blogsData.map((blog) => {
+    if (Number(id) === blog.id) {
+      return {
+        ...blog,
+        ...req.body,
+      };
+    }
+
+    return blog;
+  });
+
+  blogsData = updatedBlogs;
+
+  res.send("updated");
+};
+
+module.exports = { getAllBlogs, getSingleBlog, createBlog, updateBlog };
